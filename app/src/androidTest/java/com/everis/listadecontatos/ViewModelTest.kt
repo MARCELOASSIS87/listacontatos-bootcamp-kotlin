@@ -39,8 +39,8 @@ class ViewModelTest {
         repository = Mockito.mock(ListaDeContatosRepository::class.java)
         Mockito.`when`(repository.requestListaDeContatos(
             Mockito.anyString(),
-            MockitoHelper.anyObject(),
-            MockitoHelper.anyObject()
+            Mockito.anyObject(),
+            Mockito.anyObject()
         )).thenAnswer {
             val onSucesso = it.arguments[1] as? ((List<ContatosVO>)->Unit)
             val lista = mutableListOf<ContatosVO>()
